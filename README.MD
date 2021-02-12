@@ -1,7 +1,7 @@
 # 仿外卖小程序菜单选择
 仿美团外卖菜单分类，左右联动功能，顶部为轮播图，以及客服部分，主体部分为联动功能，滚动时，客服部分也显示在页面内，主体部分在红圈内。话不多说，直接上图
 
-![cate2](https://images.cnblogs.com/cnblogs_com/WandyLiang/1928044/t_210212083823cate1.png)           ![cate2](https://images.cnblogs.com/cnblogs_com/WandyLiang/1928044/t_210212083835cate2.png)   
+<img src="https://images.cnblogs.com/cnblogs_com/WandyLiang/1928044/o_210212145141cate1.png" width="46%" height="50%" />  <img src="https://images.cnblogs.com/cnblogs_com/WandyLiang/1928044/o_210212083835cate2.png" width="46%" height="50%" />
 
 ## 顶部：轮播图及客服
 轮播图与客服部分，简单，直接上代码：
