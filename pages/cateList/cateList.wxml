@@ -1,0 +1,41 @@
+<view class="prolist-box" bindscroll="doScroll">
+  <!-- 头部 -->
+  <view class="producttop">
+    <swiper indicator-dots="true" autoplay="true" circular="true" style="height: 422rpx" indicator-color="#f8f8f8" indicator-active-color="#fccc48">
+      <swiper-item wx:for="{{goodImages}}" wx:key="index">
+        <view>
+          <image src="{{item.imgUrl}}" class="slide-image" lazy-load='true' mode="aspectFill" />
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class='searchPro'>
+    <view class='searchPro-t'>搜索</view>
+    <button open-type="contact" show-message-card="true" class="service">
+      客服
+    </button>
+  </view>
+  <!-- 主体内容 -->
+  <view class="middle-content" style='height:{{conHeight}}rpx;'>
+    <!-- 左侧 -->
+    <scroll-view scroll-y="true" style='height:{{conHeight}}rpx;' class="cates">
+      <view class="type {{index === navActive ? 'type-active' : 'cates-content'}}" wx:for="{{typeList}}" wx:key="index" data-index="{{index}}" data-id='type{{index}}' catchtap="chooseType">
+        <view>
+          {{item.typeName}}
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 右侧 -->
+    <scroll-view class="product-list" style='height:{{conHeight}}rpx;' scroll-y="true" scroll-into-view="{{contentActive}}" scroll-with-animation="true" bindscroll="onScroll">
+      <view class="content" data-typeId="{{item.type}}" wx:for-index="parentIndex" id='type{{parentIndex}}' wx:for="{{goodList}}" wx:key="index">
+        <view class='content-li' wx:for="{{item.list}}" wx:key="key">
+          <image src="/images/trummer12.jpg" lazy-load='true' class="pro-img" mode="aspectFill" bindtap='proDetails' data-proid='{{item.goodsId}}' />
+          <view class='content-detail'>
+            <view class='pro-name'>{{item.goodsName}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
